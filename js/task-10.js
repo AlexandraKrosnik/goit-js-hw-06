@@ -1,5 +1,7 @@
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  let color = Math.floor(Math.random() * 16777215).toString(16);
+  //Переробила трішки, оскільки інколи довжина = 5 і квадрат не промальовувався
+  return color.length===6 ? `#${color}`: getRandomHexColor();
 }
 const ref = {
   inputNumber: document.querySelector('[type="number"]'),
@@ -29,11 +31,11 @@ function createBoxes(amount) {
     {
       let div = document.createElement("div");
       div.style.width = `${widthHeigthDiv}px`;
-      div.style.height = `${widthHeigthDiv}px`;
-      div.style.backgroundColor = getRandomHexColor();
+      div.style.height = `${widthHeigthDiv}px`;      
+      div.style.backgroundColor = getRandomHexColor();     
 
       arrDiv.push(div);
-      
+
       widthHeigthDiv += 10;
     }
   }
