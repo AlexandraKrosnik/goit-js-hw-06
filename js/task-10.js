@@ -9,9 +9,9 @@ const ref = {
   buttonDestroy: document.querySelector("[data-destroy]"),
   boxes: document.getElementById("boxes"),
 }
-let amountDiv;
-let arrDiv;
-let widthHeigthDiv;
+let amountDiv = 0;
+let arrDiv = [];
+let widthHeigthDiv =30;
 
 ref.buttonCreate.addEventListener("click", onMakeCollection);
 ref.buttonDestroy.addEventListener("click", destroyBoxes);
@@ -41,9 +41,7 @@ function createBoxes(amount) {
   }
 }
 
-function onMakeCollection() {
-
-  defaultValue();
+function onMakeCollection() {  
 
   valueFromInput();
   createBoxes(amountDiv); 
@@ -54,5 +52,6 @@ function onMakeCollection() {
 }
 
 function destroyBoxes() {
+  defaultValue();
   boxes.innerHTML = "";
 }
