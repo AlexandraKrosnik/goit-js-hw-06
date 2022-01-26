@@ -23,9 +23,10 @@ const handleSubmit = (event) => {
     if (displayMessage()===false)
     {
         makeObjectData(ref);
-    }
-    console.log(formData);
-    ref.formLogin.reset();
+        ref.formLogin.reset();
+        console.log(formData);
+    }   
+    
 }
 
 ref.formLogin.addEventListener("submit", handleSubmit);
